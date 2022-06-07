@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/nathanduncan/Desktop/MegaDesk/MegaDesk.csproj": {}
+    "/Users/tanner/Projects/MegaDeskRazor/MegaDesk.csproj": {}
   },
   "projects": {
-    "/Users/nathanduncan/Desktop/MegaDesk/MegaDesk.csproj": {
+    "/Users/tanner/Projects/MegaDeskRazor/MegaDesk.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nathanduncan/Desktop/MegaDesk/MegaDesk.csproj",
+        "projectUniqueName": "/Users/tanner/Projects/MegaDeskRazor/MegaDesk.csproj",
         "projectName": "MegaDesk",
-        "projectPath": "/Users/nathanduncan/Desktop/MegaDesk/MegaDesk.csproj",
-        "packagesPath": "/Users/nathanduncan/.nuget/packages/",
-        "outputPath": "/Users/nathanduncan/Desktop/MegaDesk/obj/",
+        "projectPath": "/Users/tanner/Projects/MegaDeskRazor/MegaDesk.csproj",
+        "packagesPath": "/Users/tanner/.nuget/packages/",
+        "outputPath": "/Users/tanner/Projects/MegaDeskRazor/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/nathanduncan/.nuget/NuGet/NuGet.Config"
+          "/Users/tanner/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"

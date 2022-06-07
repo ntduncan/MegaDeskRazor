@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "guefsrcJLZm4gytxNuEL2aYBMLoQTUwhdVzo4s2YTWwHkW6Ial6MwTzqjv7NCnKQj484v/X6RiiGlKXP+5n++A==",
+  "dgSpecHash": "sxs7j2VnqJoUp0l0Hut7E7ma5HBuEpDWJZA34OxxauS3D2A7JcgXwdcALOQAJ7wzbhLkAQCzKI0t8AynXMq1XA==",
   "success": true,
-  "projectFilePath": "/Users/nathanduncan/Desktop/MegaDesk/MegaDesk.csproj",
+  "projectFilePath": "/Users/tanner/Projects/MegaDeskRazor/MegaDesk.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
