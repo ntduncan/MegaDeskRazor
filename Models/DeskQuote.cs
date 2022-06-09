@@ -45,10 +45,17 @@ namespace MegaDeskRazor.Models
         // { 
         //     decimal quotePrice = BASE_DESK_PRICE;
         //     decimal surfaceArea = this.Desk.Width * this.Desk.Depth;
-        //     decimal desktopMaterialCost = this.Desk.DesktopMaterial.Cost;
+
+            // var surfaceAreaPrices = context.DesktopMaterial
+            // .Where(d => d.DesktopMaterialId == this.Desk.DesktopMaterialId)
+            // .FirstOrDefault();
+
+            // decimal desktopMaterialCost = surfaceAreaPrices.Cost;
+
         //     decimal drawerCost = this.Desk.NumberOfDrawers * DRAWER_COST;
 
         //     //TODO: Figure out rush order pricing
+        
 
         //     quotePrice += (surfaceArea + desktopMaterialCost + drawerCost);
         //     this.QuotePrice = quotePrice;

@@ -20,12 +20,18 @@ namespace MegaDesk.Pages.DeskQuotes
 
         public IActionResult OnGet()
         {
-        ViewData["DeskId"] = new SelectList(_context.Set<Desk>(), "DeskId", "DeskId");
+            ViewData["DeskQuoteId"] = new SelectList(_context.Set<DeskQuote>(), "DeskQuoteId", "DeskQuoteId");
+            ViewData["DeskId"] = new SelectList(_context.Set<Desk>(), "DeskId", "DeskId");
             return Page();
         }
 
         [BindProperty]
         public DeskQuote DeskQuote { get; set; }
+
+        [BindProperty]
+        public Desk Desk { get; set; }
+        
+        
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
