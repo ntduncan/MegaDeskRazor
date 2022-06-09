@@ -23,6 +23,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/tanner/Projects/MegaDeskRazor/Pages/Materials/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTWF0ZXJpYWxzL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tanner/Projects/MegaDeskRazor/Pages/Materials/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTWF0ZXJpYWxzL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tanner/Projects/MegaDeskRazor/Pages/Materials/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTWF0ZXJpYWxzL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tanner/Projects/MegaDeskRazor/Pages/Materials/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTWF0ZXJpYWxzL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tanner/Projects/MegaDeskRazor/Pages/Materials/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTWF0ZXJpYWxzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/tanner/Projects/MegaDeskRazor/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
