@@ -6,6 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<RazorPagesDeskQuoteContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("RazorPagesDeskQuoteContext") ?? throw new InvalidOperationException("Connection string 'RazorPagesDeskQuoteContext' not found.")));
 builder.Services.AddDbContext<MegaDeskContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("MegaDeskContext") ?? throw new InvalidOperationException("Connection string 'MegaDeskContext' not found.")));
 
