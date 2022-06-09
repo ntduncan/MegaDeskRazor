@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "\\\\Mac\\Home\\Projects\\MegaDeskRazor\\MegaDesk.csproj": {}
+    "/Users/tanner/Projects/MegaDeskRazor/MegaDesk.csproj": {}
   },
   "projects": {
-    "\\\\Mac\\Home\\Projects\\MegaDeskRazor\\MegaDesk.csproj": {
+    "/Users/tanner/Projects/MegaDeskRazor/MegaDesk.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\Mac\\Home\\Projects\\MegaDeskRazor\\MegaDesk.csproj",
+        "projectUniqueName": "/Users/tanner/Projects/MegaDeskRazor/MegaDesk.csproj",
         "projectName": "MegaDesk",
-        "projectPath": "\\\\Mac\\Home\\Projects\\MegaDeskRazor\\MegaDesk.csproj",
-        "packagesPath": "C:\\Users\\Tanner\\.nuget\\packages\\",
-        "outputPath": "\\\\Mac\\Home\\Projects\\MegaDeskRazor\\obj\\",
+        "projectPath": "/Users/tanner/Projects/MegaDeskRazor/MegaDesk.csproj",
+        "packagesPath": "/Users/tanner/.nuget/packages/",
+        "outputPath": "/Users/tanner/Projects/MegaDeskRazor/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Tanner\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/tanner/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -81,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
         }
       }
     }

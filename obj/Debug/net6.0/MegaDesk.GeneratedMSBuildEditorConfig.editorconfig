@@ -8,57 +8,57 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MegaDesk
 build_property.RootNamespace = MegaDesk
-build_property.ProjectDir = \\Mac\Home\Projects\MegaDeskRazor\
+build_property.ProjectDir = /Users/tanner/Projects/MegaDeskRazor/
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = \\Mac\Home\Projects\MegaDeskRazor
+build_property.MSBuildProjectDirectory = /Users/tanner/Projects/MegaDeskRazor
 build_property._RazorSourceGeneratorDebug = 
 
-[//Mac/Home/Projects/MegaDeskRazor/Pages/DeskQuotes/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVza1F1b3Rlc1xDcmVhdGUuY3NodG1s
+[/Users/tanner/Projects/MegaDeskRazor/Pages/DeskQuotes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRGVza1F1b3Rlcy9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Projects/MegaDeskRazor/Pages/DeskQuotes/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVza1F1b3Rlc1xEZWxldGUuY3NodG1s
+[/Users/tanner/Projects/MegaDeskRazor/Pages/DeskQuotes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRGVza1F1b3Rlcy9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Projects/MegaDeskRazor/Pages/DeskQuotes/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVza1F1b3Rlc1xEZXRhaWxzLmNzaHRtbA==
+[/Users/tanner/Projects/MegaDeskRazor/Pages/DeskQuotes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRGVza1F1b3Rlcy9EZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Projects/MegaDeskRazor/Pages/DeskQuotes/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVza1F1b3Rlc1xFZGl0LmNzaHRtbA==
+[/Users/tanner/Projects/MegaDeskRazor/Pages/DeskQuotes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRGVza1F1b3Rlcy9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Projects/MegaDeskRazor/Pages/DeskQuotes/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVza1F1b3Rlc1xJbmRleC5jc2h0bWw=
+[/Users/tanner/Projects/MegaDeskRazor/Pages/DeskQuotes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRGVza1F1b3Rlcy9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Projects/MegaDeskRazor/Pages/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+[/Users/tanner/Projects/MegaDeskRazor/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Projects/MegaDeskRazor/Pages/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+[/Users/tanner/Projects/MegaDeskRazor/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Projects/MegaDeskRazor/Pages/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+[/Users/tanner/Projects/MegaDeskRazor/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Projects/MegaDeskRazor/Pages/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[/Users/tanner/Projects/MegaDeskRazor/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Projects/MegaDeskRazor/Pages/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/Users/tanner/Projects/MegaDeskRazor/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Projects/MegaDeskRazor/Pages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+[/Users/tanner/Projects/MegaDeskRazor/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Projects/MegaDeskRazor/Pages/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-2tj1572dig
+[/Users/tanner/Projects/MegaDeskRazor/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-7tl01x8c05
