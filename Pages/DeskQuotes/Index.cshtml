@@ -26,7 +26,13 @@
                 @Html.DisplayNameFor(model => model.DeskQuote[0].QuotePrice)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].Desk)
+                @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.Width)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.Width)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.DesktopMaterial.Material)
             </th>
             <th></th>
         </tr>
@@ -41,13 +47,19 @@
                 @Html.DisplayFor(modelItem => item.QuoteDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RushOrderId)
+                @Html.DisplayFor(modelItem => item.RushOrder.Type)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.QuotePrice)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Desk.DeskId)
+                @Html.DisplayFor(modelItem => item.Desk.Width)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desk.Depth)
+            </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Desk.DesktopMaterial.Material)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.DeskQuoteId">Edit</a> |

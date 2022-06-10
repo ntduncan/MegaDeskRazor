@@ -25,7 +25,10 @@ namespace MegaDesk.Pages.DeskQuotes
             if (_context.DeskQuote != null)
             {
                 DeskQuote = await _context.DeskQuote
-                .Include(d => d.Desk).ToListAsync();
+                .Include(d => d.Desk)
+                .Include(d => d.RushOrder)
+                .Include(d => d.Desk.DesktopMaterial)
+                .ToListAsync();
             }
         }
     }

@@ -35,14 +35,22 @@ namespace MegaDesk.Pages.DeskQuotes
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
+          var DesktopMaterial = _context.DesktopMaterial.Where(m => m.DesktopMaterialId == Desk.DesktopMaterialId).FirstOrDefault();
+          Desk.DesktopMaterial = DesktopMaterial;
           if (!ModelState.IsValid)
             {
+              var errors = ModelState
+              .Where(x => x.Value.Errors.Count > 0)
+              .Select(x => new { x.Key, x.Value.Errors })
+              .ToArray();
                 return Page();
             }
             // _context.DesktopMaterial.Add(DesktopMaterial);
             // _context.RushOrder.Add(RushOrder);
+            DeskQuote.Desk = Desk;
             DeskQuote.QuotePrice = DeskQuote.GetQuotePrice(_context);
             DeskQuote.DeskId = Desk.DeskId;
+            DeskQuote.Desk = Desk;
             
             _context.Desk.Add(Desk);
             _context.DeskQuote.Add(DeskQuote);
