@@ -24,18 +24,18 @@ namespace MegaDesk.Pages.DeskQuotes
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.DeskQuote == null)
-            {
-                return NotFound();
-            }
+            if (id == null) { return NotFound(); }
 
-            var deskquote =  await _context.DeskQuote.FirstOrDefaultAsync(m => m.DeskQuoteId == id);
-            if (deskquote == null)
-            {
-                return NotFound();
-            }
-            DeskQuote = deskquote;
-           ViewData["DeskId"] = new SelectList(_context.Set<Desk>(), "DeskId", "DeskId");
+            // DeskQuote = _context.DeskQuote;
+            DeskQuote = await _context.DeskQuote
+                .Include(d => d.RushOrder)
+                .Include(d => d.Desk)
+                .FirstOrDefaultAsync(n => n.DeskQuoteId == id);
+
+            if (DeskQuote == null) { return NotFound(); }
+
+           ViewData["RushOrderId"] = new SelectList(_context.RushOrder, "RushOrderId", "RushOrder");
+           ViewData["DesktopMaterialId"] = new SelectList(_context.Set<DesktopMaterial>(), "DesktopMaterialId", "DesktopMaterial");
             return Page();
         }
 
@@ -44,29 +44,39 @@ namespace MegaDesk.Pages.DeskQuotes
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
-            _context.Attach(DeskQuote).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!DeskQuoteExists(DeskQuote.DeskQuoteId))
                 {
-                    return NotFound();
+                    return Page();
                 }
-                else
-                {
-                    throw;
-                }
-            }
 
-            return RedirectToPage("./Index");
+                _context.Attach(DeskQuote.Desk).State = EntityState.Modified;
+
+
+                try
+                {
+                    //Save Desk
+                    await _context.SaveChangesAsync();
+
+                    // Reset Quote Price
+                    DeskQuote.QuotePrice = DeskQuote.GetQuotePrice(_context);
+
+                    //Save DeskQuote
+                    _context.Attach(DeskQuote).State = EntityState.Modified;
+                    await _context.SaveChangesAsync();
+
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if(!DeskQuoteExists(DeskQuote.DeskQuoteId))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+
+                return RedirectToPage("./Index");
         }
 
         private bool DeskQuoteExists(int id)

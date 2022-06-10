@@ -41,7 +41,7 @@ namespace MegaDeskRazor.Models
 
 
         // //Methods
-        public decimal GetQuotePrice(MegaDeskRazorContext context)
+        public decimal GetQuotePrice(RazorPagesDeskQuoteContext context)
         { 
             decimal surfaceArea = this.Desk.Width * this.Desk.Depth;
             decimal drawerCost = this.Desk.NumberOfDrawers * DRAWER_COST;
@@ -61,7 +61,7 @@ namespace MegaDeskRazor.Models
 
             //Determine Shipping Cost
             decimal shippingPrice = 0.00M;
-            var shippingPrices = context.DesktopMaterial
+            var shippingPrices = context.RushOrder
             .Where(d => d.RushOrderId == this.RushOrderId)
             .FirstOrDefault();
             if(surfaceArea < 1000){ 
