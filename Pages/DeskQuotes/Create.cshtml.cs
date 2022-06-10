@@ -17,23 +17,21 @@ namespace MegaDesk.Pages.DeskQuotes
         {
             _context = context;
         }
-
-        public IActionResult OnGet()
-        {
-            ViewData["DeskQuoteId"] = new SelectList(_context.Set<DeskQuote>(), "DeskQuoteId", "DeskQuoteId");
-            ViewData["DeskId"] = new SelectList(_context.Set<Desk>(), "DeskId", "DeskId");
-            return Page();
-        }
+        [BindProperty]
+        public Desk Desk { get; set; }
 
         [BindProperty]
         public DeskQuote DeskQuote { get; set; }
 
-        [BindProperty]
-        public Desk Desk { get; set; }
+        public IActionResult OnGet()
+        {
+            // ViewData["DeskQuoteId"] = new SelectList(_context.Set<DeskQuote>(), "DeskQuoteId", "DeskQuoteId");
+            // ViewData["DeskId"] = new SelectList(_context.Set<Desk>(), "DeskId", "DeskId");
+            ViewData["RushOrderId"] = new SelectList(_context.RushOrder, "RushOrderId", "Type");
+            ViewData["DesktopMaterialId"] = new SelectList(_context.DesktopMaterial, "DesktopMaterialId", "Material");
+            return Page();
+        }      
         
-        
-        
-
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
@@ -41,7 +39,12 @@ namespace MegaDesk.Pages.DeskQuotes
             {
                 return Page();
             }
-
+            // _context.DesktopMaterial.Add(DesktopMaterial);
+            // _context.RushOrder.Add(RushOrder);
+            DeskQuote.QuotePrice = DeskQuote.GetQuotePrice(_context);
+            DeskQuote.DeskId = Desk.DeskId;
+            
+            _context.Desk.Add(Desk);
             _context.DeskQuote.Add(DeskQuote);
             await _context.SaveChangesAsync();
 
