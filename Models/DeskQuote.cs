@@ -25,7 +25,7 @@ namespace MegaDeskRazor.Models
         public DateTime QuoteDate { get; set; }
         
         [Display(Name = "Shipping Option")]
-        public int DeliveryTypeId { get; set; }
+        public int RushOrderId { get; set; }
 
         [Required]
         public int DeskId { get; set; }
@@ -41,26 +41,37 @@ namespace MegaDeskRazor.Models
 
 
         // //Methods
-        // public decimal GetQuotePrice(MegaDeskRazorContext context)
-        // { 
-        //     decimal quotePrice = BASE_DESK_PRICE;
-        //     decimal surfaceArea = this.Desk.Width * this.Desk.Depth;
+        public decimal GetQuotePrice(MegaDeskRazorContext context)
+        { 
+            decimal surfaceArea = this.Desk.Width * this.Desk.Depth;
+            decimal surfacePrice = (surfaceArea - 1000) * SURFACE_AREA_COST;
+            decimal drawerCost = this.Desk.NumberOfDrawers * DRAWER_COST;
+            
+            //Determine Surface Area Cost
+            decimal surfaceMaterialCost = 0.00M;
+            var surfaceAreaPrices = context.DesktopMaterial
+            .Where(d => d.DesktopMaterialId == this.Desk.DesktopMaterialId)
+            .FirstOrDefault();
+            surfaceMaterialCost = surfaceAreaPrices.Cost;
 
-            // var surfaceAreaPrices = context.DesktopMaterial
-            // .Where(d => d.DesktopMaterialId == this.Desk.DesktopMaterialId)
-            // .FirstOrDefault();
-
-            // decimal desktopMaterialCost = surfaceAreaPrices.Cost;
-
-        //     decimal drawerCost = this.Desk.NumberOfDrawers * DRAWER_COST;
-
-        //     //TODO: Figure out rush order pricing
+            //Determine Shipping Cost
+            decimal shippingPrice = 0.00M;
+            var shippingPrices = context.DesktopMaterial
+            .Where(d => d.RushOrderId == this.RushOrderId)
+            .FirstOrDefault();
+            
+            if(surfaceArea < 1000){ 
+                shippingPrice = shippingPrices.SmallDeskPrice;
+            } else if (surfaceArea >= 1000 || surfaceArea <= 200){ 
+                shippingPrice = shippingPrices.MediumDeskPrice;   
+            } else { 
+                shippingPrice = shippingPrices.LargeDeskPrice;
+            }
         
 
-        //     quotePrice += (surfaceArea + desktopMaterialCost + drawerCost);
-        //     this.QuotePrice = quotePrice;
-
-        //     return this.QuotePrice;
-        // }
+            this.QuotePrice = surfacePrice + surfaceMaterialCost + drawerCost + BASE_DESK_PRICE;
+        
+            return this.QuotePrice;
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace MegaDeskRazor.Models
         [Required]
         public string Type { get; set;}
         [Required]
-        [Display(Name = "Greater than 1000")]
+        [Display(Name = "Less than 1000")]
         public decimal SmallDeskPrice { get; set; }
         [Required]
         [Display(Name = "1000 to 2000")]
