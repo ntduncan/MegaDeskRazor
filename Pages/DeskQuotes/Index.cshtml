@@ -4,18 +4,13 @@
 @{
     ViewData["Title"] = "Index";
 }
-<div class="container">
-    <div class="row">
-        <div class="col-10">
+
             <h1>Desk Quotes</h1>
-        </div>
-        <div class="col-2">
+
             <p class="btn btn-primary">
-                <a asp-page="Create" class="text-light">Create New</a>
+                <a asp-page="Create" class="text-light" style="text-decoration: none;">Create Quote</a>
             </p>
-        </div>
-    </div>
-</div>
+
 
 <table class="table">
     <thead>
@@ -71,7 +66,7 @@
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.DeskQuoteId">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.DeskQuoteId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.DeskQuoteId">Delete</a> |
+                <a asp-page="./Delete" asp-route-id="@item.DeskQuoteId">Delete</a> 
             </td>
         </tr>
 }

@@ -30,6 +30,13 @@ namespace MegaDesk.Pages.DeskQuotes
 
             var deskquote = await _context.DeskQuote.FirstOrDefaultAsync(m => m.DeskQuoteId == id);
 
+            
+            DeskQuote = await _context.DeskQuote
+                .Include(d => d.RushOrder)
+                .Include(d => d.Desk)
+                .Include(d => d.Desk.DesktopMaterial)
+                .FirstOrDefaultAsync(n => n.DeskQuoteId == id);
+
             if (deskquote == null)
             {
                 return NotFound();
