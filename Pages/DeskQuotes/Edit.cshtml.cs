@@ -26,16 +26,16 @@ namespace MegaDesk.Pages.DeskQuotes
         {
             if (id == null) { return NotFound(); }
 
-            // DeskQuote = _context.DeskQuote;
+            // DeskQuote = await _context.DeskQuote;
             DeskQuote = await _context.DeskQuote
                 .Include(d => d.RushOrder)
                 .Include(d => d.Desk)
                 .FirstOrDefaultAsync(n => n.DeskQuoteId == id);
 
             if (DeskQuote == null) { return NotFound(); }
+            ViewData["RushOrderId"] = new SelectList(_context.RushOrder, "RushOrderId", "Type");
+            ViewData["DesktopMaterialId"] = new SelectList(_context.DesktopMaterial, "DesktopMaterialId", "Material");
 
-           ViewData["RushOrderId"] = new SelectList(_context.RushOrder, "RushOrderId", "RushOrder");
-           ViewData["DesktopMaterialId"] = new SelectList(_context.Set<DesktopMaterial>(), "DesktopMaterialId", "DesktopMaterial");
             return Page();
         }
 

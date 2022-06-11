@@ -28,6 +28,16 @@ namespace MegaDesk.Pages.DeskQuotes
             }
 
             var deskquote = await _context.DeskQuote.FirstOrDefaultAsync(m => m.DeskQuoteId == id);
+
+            DeskQuote = await _context.DeskQuote
+                .Include(d => d.RushOrder)
+                .Include(d => d.Desk)
+                .Include(d => d.Desk.DesktopMaterial)
+                .FirstOrDefaultAsync(n => n.DeskQuoteId == id);
+
+            // ViewData["RushOrderId"] = new SelectList(_context.RushOrder, "RushOrderId", "Type");
+            // ViewData["DesktopMaterialId"] = new SelectList(_context.DesktopMaterial, "DesktopMaterialId", "Material");
+
             if (deskquote == null)
             {
                 return NotFound();

@@ -2,6 +2,7 @@ using MegaDeskRazor.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 // using MegaDeskRazor.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

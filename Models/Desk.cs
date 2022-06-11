@@ -13,7 +13,7 @@ namespace MegaDeskRazor.Models
         [Range(12,48)]
         public decimal Depth { get; set; }
         [Required]
-        [Display(Name = "Number of Drawers")]
+        [Display(Name = "Drawers")]
         [Range(0,7)]
         public int NumberOfDrawers { get; set; }
         [Required]

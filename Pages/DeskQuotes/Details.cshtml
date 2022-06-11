@@ -1,22 +1,16 @@
-RushOrder@page
+@page
 @model MegaDesk.Pages.DeskQuotes.DetailsModel
 
 @{
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>@Html.DisplayFor(model => model.DeskQuote.CustomerName)</h1>
 
 <div>
-    <h4>DeskQuote</h4>
+    <h4>Order ID: @Html.DisplayFor(model => model.DeskQuote.DeskQuoteId)</h4>
     <hr />
     <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.CustomerName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.CustomerName)
-        </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.DeskQuote.QuoteDate)
         </dt>
@@ -27,7 +21,7 @@ RushOrder@page
             @Html.DisplayNameFor(model => model.DeskQuote.RushOrderId)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.RushOrderId)
+            @Html.DisplayFor(model => model.DeskQuote.RushOrder.Type)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.DeskQuote.QuotePrice)
@@ -35,12 +29,32 @@ RushOrder@page
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.DeskQuote.QuotePrice)
         </dd>
+        <hr />
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.Desk)
+            @Html.DisplayNameFor(model => model.DeskQuote.Desk.DesktopMaterial)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.Desk.DeskId)
+            @Html.DisplayFor(model => model.DeskQuote.Desk.DesktopMaterial.Material)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DeskQuote.Desk.Width)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeskQuote.Desk.Width)"
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DeskQuote.Desk.Depth)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeskQuote.Desk.Depth)"
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DeskQuote.Desk.NumberOfDrawers)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeskQuote.Desk.NumberOfDrawers)
+        </dd>
+        <hr />
     </dl>
 </div>
 <div>

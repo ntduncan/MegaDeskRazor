@@ -4,12 +4,19 @@
 @{
     ViewData["Title"] = "Index";
 }
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+            <h1>Desk Quotes</h1>
+        </div>
+        <div class="col-2">
+            <p class="btn btn-primary">
+                <a asp-page="Create" class="text-light">Create New</a>
+            </p>
+        </div>
+    </div>
+</div>
 
-<h1>Index</h1>
-
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -20,7 +27,7 @@
                 @Html.DisplayNameFor(model => model.DeskQuote[0].QuoteDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].RushOrderId)
+                @Html.DisplayNameFor(model => model.DeskQuote[0].RushOrder)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DeskQuote[0].QuotePrice)
@@ -29,7 +36,7 @@
                 @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.Width)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.Width)
+                @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.Depth)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.DesktopMaterial.Material)
@@ -64,7 +71,7 @@
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.DeskQuoteId">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.DeskQuoteId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.DeskQuoteId">Delete</a>
+                <a asp-page="./Delete" asp-route-id="@item.DeskQuoteId">Delete</a> |
             </td>
         </tr>
 }

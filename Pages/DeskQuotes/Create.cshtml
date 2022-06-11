@@ -13,16 +13,15 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="DeskQuote.QuoteDate" class="form-control" value="@DateTime.Now"/>
             <div class="form-group">
                 <label asp-for="DeskQuote.CustomerName" class="control-label"></label>
                 <input asp-for="DeskQuote.CustomerName" class="form-control" />
                 <span asp-validation-for="DeskQuote.CustomerName" class="text-danger"></span>
             </div>
-            <div class="form-group">
-              <label asp-for="DeskQuote.QuoteDate"></label>
-              <input asp-for="DeskQuote.QuoteDate" class="form-control" />
-              <span asp-validation-for="DeskQuote.QuoteDate" class="text-danger"></span>
-            </div>
+
+
             <div class="form-group">
               <label asp-for="Desk.DesktopMaterialId" class="control-label"></label>
               <select asp-for="Desk.DesktopMaterialId" class="form-control" asp-items=ViewBag.DesktopMaterialId required>
