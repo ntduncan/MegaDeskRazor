@@ -5,59 +5,91 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>@Html.DisplayFor(model => model.DeskQuote.CustomerName)</h1>
+<h1>
+        @Html.DisplayFor(model => model.DeskQuote.CustomerName)  &nbsp;
+        <a asp-page="./Edit" asp-route-id="@Model.DeskQuote?.DeskQuoteId">
+            <img src="https://cdn-icons-png.flaticon.com/512/588/588477.png" width="30" class="icon" alt="">
+        </a> 
+</h1>
 
 <div>
-    <h4>Order ID: @Html.DisplayFor(model => model.DeskQuote.DeskQuoteId)</h4>
+    <h4>
+        Order ID: @Html.DisplayFor(model => model.DeskQuote.DeskQuoteId) &nbsp;
+
+    </h4>
+        
     <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.QuoteDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.QuoteDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.RushOrderId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.RushOrder.Type)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.QuotePrice)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.QuotePrice)
-        </dd>
-        <hr />
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.Desk.DesktopMaterial)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.Desk.DesktopMaterial.Material)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.Desk.Width)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.Desk.Width)"
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.Desk.Depth)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.Desk.Depth)"
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.Desk.NumberOfDrawers)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.Desk.NumberOfDrawers)
-        </dd>
-        <hr />
+    <dl>
+    <div class="detail-card row">
+
+        <div class="col">
+            <dt class="col-sm">
+                @Html.DisplayNameFor(model => model.DeskQuote.QuoteDate)
+            </dt>
+            <dd class="col-sm">
+                @Html.DisplayFor(model => model.DeskQuote.QuoteDate)
+            </dd>
+
+            <dt class="col-sm">
+                @Html.DisplayNameFor(model => model.DeskQuote.RushOrderId)
+            </dt>
+            <dd class="col-sm">
+                @Html.DisplayFor(model => model.DeskQuote.RushOrder.Type)
+            </dd>
+
+            <dt class="col-sm">
+                @Html.DisplayNameFor(model => model.DeskQuote.QuotePrice)
+            </dt>
+            <dd class="col-sm">
+                @Html.DisplayFor(model => model.DeskQuote.QuotePrice)
+            </dd>
+        </div>
+        <div class="col">
+            <dt class="col-sm">
+                @Html.DisplayNameFor(model => model.DeskQuote.Desk.DesktopMaterial)
+            </dt>
+            <dd class="col-sm">
+                @Html.DisplayFor(model => model.DeskQuote.Desk.DesktopMaterial.Material)
+            </dd>
+            <dt class="col-sm">
+                @Html.DisplayNameFor(model => model.DeskQuote.Desk.Width)
+            </dt>
+            <dd class="col-sm">
+                @Html.DisplayFor(model => model.DeskQuote.Desk.Width)"
+            </dd>
+            <dt class="col-sm">
+                @Html.DisplayNameFor(model => model.DeskQuote.Desk.Depth)
+            </dt>
+            <dd class="col-sm">
+                @Html.DisplayFor(model => model.DeskQuote.Desk.Depth)"
+            </dd>
+            <dt class="col-sm">
+                @Html.DisplayNameFor(model => model.DeskQuote.Desk.NumberOfDrawers)
+            </dt>
+            <dd class="col-sm">
+                @Html.DisplayFor(model => model.DeskQuote.Desk.NumberOfDrawers)
+            </dd>
+        </div>
+<div class="">
+    <a asp-page="./Index">
+    Back to List
+    </a>
+</div>
     </dl>
+    </div>
 </div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.DeskQuote?.DeskQuoteId">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-</div>
+
+<style>
+    .detail-card {
+        border-radius: 20px;
+        padding: 1em;
+    }
+    .icon {
+        border: 1px solid black; padding: 2px; border-radius: 5px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        text-decoration: none;
+    }
+    .icon:hover {
+        background-color: #aaa;
+    }
+</style>

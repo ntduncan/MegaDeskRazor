@@ -5,12 +5,17 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
 
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
+<div class="container">
+    <h1 class="mb-4">
+        Order ID:  @Html.DisplayFor(model => model.DeskQuote.DeskQuoteId)
+    </h1>
+    <div class="row">
+        <form method="post" class="row">
+            <div class="row mb-4">
+
+            <div class="col">
+            <h2>Order Info</h2>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="DeskQuote.DeskQuoteId"/>
             <input type="hidden" asp-for="DeskQuote.Desk.DeskId"/>
@@ -28,37 +33,55 @@
               </select>
               <span asp-validation-for="DeskQuote.RushOrderId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.Desk.Width" class="control-label"></label>
-                <input asp-for="DeskQuote.Desk.Width" class="form-control" min="24" max="72"/>
-                <span asp-validation-for="DeskQuote.Desk.Width" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.Desk.Depth" class="control-label"></label>
-                <input asp-for="DeskQuote.Desk.Depth" class="form-control" min="12" max="24"/>
-                <span asp-validation-for="DeskQuote.Desk.Depth" class="text-danger"></span>
+
+            <div class="col">
+            <h2>Desk Order</h2>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="DeskQuote.Desk.Width" class="control-label"></label>
+                        <input asp-for="DeskQuote.Desk.Width" class="form-control" min="24" max="72"/>
+                        <span asp-validation-for="DeskQuote.Desk.Width" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                    <label asp-for="DeskQuote.Desk.DesktopMaterial" class="control-label"></label>
+                    <select asp-for="DeskQuote.Desk.DesktopMaterialId" class="form-control" asp-items="ViewBag.DesktopMaterialId "required>
+                        <option value="">Choose</option>
+                    </select>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.Desk.NumberOfDrawers" class="control-label"></label>
-                <input asp-for="DeskQuote.Desk.NumberOfDrawers" class="form-control" min="0" max="7"/>
-                <span asp-validation-for="DeskQuote.Desk.NumberOfDrawers" class="text-danger"></span>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="DeskQuote.Desk.Depth" class="control-label"></label>
+                        <input asp-for="DeskQuote.Desk.Depth" class="form-control" min="12" max="24"/>
+                        <span asp-validation-for="DeskQuote.Desk.Depth" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="DeskQuote.Desk.NumberOfDrawers" class="control-label"></label>
+                        <input asp-for="DeskQuote.Desk.NumberOfDrawers" class="form-control" min="0" max="7"/>
+                        <span asp-validation-for="DeskQuote.Desk.NumberOfDrawers" class="text-danger"></span>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-              <label asp-for="DeskQuote.Desk.DesktopMaterialId" class="control-label"></label>
-              <select asp-for="DeskQuote.Desk.DesktopMaterialId" class="form-control" asp-items="ViewBag.DesktopMaterialId "required>
-                <option value="">Choose</option>
-              </select>
             </div>
             <br />
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
+            <div class="form-group row text-center">
+                <input type="submit" value="Save" class="btn btn-primary mb-2" />
+                
+                    <a asp-page="/DeskQuotes/Index">Cancel</a>
+                
+            </div>                
         </form>
+
     </div>
-</div>
-<br />
-<div>
-    <a asp-page="./Index">Back to List</a>
 </div>
 
 @section Scripts {
