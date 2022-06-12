@@ -10,65 +10,28 @@
             <p class="btn btn-primary">
                 <a asp-page="Create" class="text-light" style="text-decoration: none;">Create Quote</a>
             </p>
+<div class="card-group">
+  @foreach(var item in Model.DeskQuote)
+  {
+    <div class="card m-2" style="border: 2px solid #ddd; border-radius: 20px; ">
+      <div class="card-body">
+        <div class="card-title">
+          @* <h5>Order Id: @Html.DisplayFor(modelItem => item.DeskQuoteId)</h5> *@
+          <h4>@Html.DisplayFor(modelItem => item.CustomerName)</h4>
+        </div>
+        <hr>
+        <div class="card-text">
+          <p>Date Ordered: @Html.DisplayFor(modelItem => item.QuoteDate)</p>
+          <p>Order Type: @Html.DisplayFor(modelItem => item.RushOrder.Type)</p>
+          <p>Price: @Html.DisplayFor(modelItem => item.QuotePrice)</p>
+        </div>
+        <div class="card-footer">
+          <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.DeskQuoteId">Edit</a>
+          <a class="btn btn-secondary" asp-page="./Details" asp-route-id="@item.DeskQuoteId">Details</a>
+          <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.DeskQuoteId">Delete</a> 
+        </div>
+      </div>
 
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].CustomerName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].QuoteDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].RushOrder)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].QuotePrice)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.Width)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.Depth)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.DesktopMaterial.Material)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.DeskQuote) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustomerName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.QuoteDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RushOrder.Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.QuotePrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Desk.Width)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Desk.Depth)
-            </td>
-              <td>
-                @Html.DisplayFor(modelItem => item.Desk.DesktopMaterial.Material)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.DeskQuoteId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.DeskQuoteId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.DeskQuoteId">Delete</a> 
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    </div>
+  }
+</div>

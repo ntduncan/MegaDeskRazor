@@ -5,12 +5,42 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Delete Quote #@Html.DisplayFor(model => model.DeskQuote.DeskQuoteId)</h1>
+<h1>Delete Order: @Html.DisplayFor(model => model.DeskQuote.DeskQuoteId)</h1>
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <hr />
-    <dl class="row">
+    <div class="container">
+      <h3 class="col-md-6"></h3>
+      <details open>
+        <summary>Order Details</summary>
+        <hr/>
+        <div class="row">
+        <p class="col-md-6"><b>Name:</b> @Html.DisplayFor(model => model.DeskQuote.CustomerName)</p>
+        <p class="col-md-6"><b>Date:</b> @Html.DisplayFor(model => model.DeskQuote.QuoteDate)</p>
+      </div>
+      <div class="row">
+        <p class="col-md-6"><b>Shipping Rush:</b> @Html.DisplayFor(model => model.DeskQuote.RushOrder.Type)</p>
+        <p class="col-md-6"><b>Price:</b> @Html.DisplayFor(model => model.DeskQuote.QuotePrice)</p>
+      </div>
+      </details>
+      
+      <h3></h3>
+      <details open>
+        <summary>Desk Details</summary>
+        <hr/>
+        <div class="row">
+        <p class="col-md-6"><b>Material:</b> @Html.DisplayFor(model => model.DeskQuote.Desk.DesktopMaterial.Material)</p>
+        <p class="col-md-6"><b>Number of Drawers:</b> @Html.DisplayFor(model => model.DeskQuote.Desk.NumberOfDrawers)</p>
+      </div>
+      <div class="row">
+        <p class="col-md-6"><b>Width:</b> @Html.DisplayFor(model => model.DeskQuote.Desk.Width) inches</p>
+        <p class="col-md-6"><b>Depth:</b> @Html.DisplayFor(model => model.DeskQuote.Desk.Depth) inches</p>
+        
+      </div>
+      </details>
+      
+    </div>
+    @* <dl class="row">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.DeskQuote.CustomerName)
         </dt>
@@ -61,7 +91,7 @@
             @Html.DisplayFor(model => model.DeskQuote.Desk.NumberOfDrawers)
         </dd>
         <hr />
-    </dl>
+    </dl> *@
     
     <form method="post">
         <input type="hidden" asp-for="DeskQuote.DeskQuoteId" />
